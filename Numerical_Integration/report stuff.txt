@@ -1,0 +1,185 @@
+Sims/ trap validate
+
+epsilon = 1e-4
+
+val_ts(True, True)
+Running  test_f1 ...
+Trapezoidal Rule found 0.999987450118 +- 3.76514430205e-05 using 128 bins
+True Value is 1.0 , difference is 1.255e-05 ( 0.1255 epsilon)
+Simpson's Rule found 1.00000051668 +- 7.77877875108e-06 using 16 bins
+True Value is 1.0 , difference is 5.167e-07 ( 0.005167 epsilon)
+Run time 0.0015s 
+
+Running  test_f2 ...
+Trapezoidal Rule found 1.27325897283 +- 5.82816130375e-05 using 256 bins
+True Value is 1.2732395447351628 , difference is 1.943e-05 ( 0.1943 epsilon)
+Simpson's Rule found 1.27323954474 +- 2.82715971686e-16 using 4 bins
+True Value is 1.2732395447351628 , difference is 0 ( 0 epsilon)
+Run time 0.0011s 
+
+Running  test_f3 ...
+Trapezoidal Rule found 0.682679646243 +- 2.95399220808e-05 using 128 bins
+True Value is 0.6827 , difference is 2.035e-05 ( 0.2035 epsilon)
+Simpson's Rule found 0.682690812278 +- 2.01628395982e-05 using 16 bins
+True Value is 0.6827 , difference is 9.188e-06 ( 0.09188 epsilon)
+Run time 0.0017s 
+
+transformation
+
+pdf (e=1e-3)
+Running...
+Iteration: 5.9e+04     Error 0.0005532
+Transformation Monte Carlo found Integral = 0.498227 +- 0.000548636 after 60000 samples
+Does not agree with simpsons result
+Run time 1.1004s
+
+(e=1e-4)
+Running...
+Iteration: 1.07e+05     Error 0.0004123
+Transformation Monte Carlo found Integral = 0.497546 +- 0.000410385 after 108000 samples
+Agrees with Simpsons Rule Result
+Run time 2.2071s
+
+(e = 1e-5)
+Running...
+Iteration: 3.23e+05     Error 0.0002369
+Transformation Monte Carlo found Integral = 0.497716 +- 0.000236579 after 324000 samples
+Agrees with Simpsons Rule Result
+Run time 9.6604s
+
+(e = 1e-6)
+Running...
+Iteration: 1.004e+06     Error 0.0001345
+Transformation Monte Carlo found Integral = 0.497498 +- 0.000134472 after 1005000 samples
+Does not agree with simpsons result
+Run time 58.5071s
+
+uni (e = 1e-3)
+Running...
+Iteration: 7.3e+04     Error 0.001442
+Transformation Monte Carlo found Integral = 0.499451 +- 0.0014326 after 74000 samples
+Does not agree with simpsons result
+Run time 1.0433s
+
+(e = 1e-4)
+Running...
+Iteration: 1.85e+05     Error 0.0009048
+Transformation Monte Carlo found Integral = 0.496592 +- 0.000902278 after 186000 samples
+Does not agree with simpsons result
+Run time 3.0844s
+
+(e = 1e-5)
+Running...
+Iteration: 5.97e+05     Error 0.0005036
+Transformation Monte Carlo found Integral = 0.497728 +- 0.000503192 after 598000 samples
+Agrees with Simpsons Rule Result
+Run time 15.2054s
+
+(e = 1e-6)
+Running...
+Iteration: 1.775e+06     Error 0.0002921
+Transformation Monte Carlo found Integral = 0.497572 +- 0.000291964 after 1776000 samples
+Agrees with Simpsons Rule Result
+Run time 90.4685s
+
+
+general points to add
+	- all methods remove first 5 iterations as burn in time
+	- that ALWAYS has uncertainty less than the given relat...... 4)i)
+
+Transformation results
+	- not used relative error as the actual error value as this causes an underestimation of errors
+	- however accuracy specified is then not accuracy gained.
+	- using the other error as the termination condition causes exsessive run time (which makes sense
+	  but is not practical here as only relative error is requested)
+
+what to include:
+	- notes on the 10-6 accuracy compared to Newton Coats
+	- 10^-6 does not strictly agree (this is not instability)
+	- compare run time to coats
+
+	- comparison of the different relative accuracies
+	- compare function evaluations, run time, plot?
+
+	- stipulate likely occurances in higher dimensions
+
+Monte Carlo for both a uniform and linear pdf (see appendix __) at a relative accuracies of 10^-6
+are shown in figure __. As can be seen they provided general convergence however due to the random nature
+of monte carlo iterations can locally divergent. This can cause issues with termination, shown the linear pdf
+disagreeing with the previously found result (but only slightly). By interpreting the uncertainty as a standard deviation,
+(i.e. ~68% of results should lie within) the uncertainty occasionally disagreeing with the known result is reasonable,
+particually as approximatly 30% of the data points seem to disagree in figure __. This could possibly be avoided in the
+future by running the process several times with different random generator seeds and taking an average of the results.
+
+%This method is stable for the sample wavefunction and all vlidation functions (see appendix), suggesting it is viable as
+an integrator for more general functions.
+
+The iterations requiered for differnet relative accuracies are shown in figure __, note that 5/8 results agreed with previous results,
+agreeing with the standard deviation interpretation of errors. As expected the linear pdf gives more efficent convegence requiering around
+half the iterations for $\epsilon >= 10^{-4}$, due to sampling the fucntion at a higher frequency in regions of greater importance.
+
+This Monte Carlo method in these one dimensional instances is seen to be far less efficne than the Newton Coats integration,
+which were far faster, with less function evaluations and less uncertainty as well as being a far simpler in implementation.
+However if these problems were to be generalised to multiple dimensions, this monte carlo method would remain virtually unchanged
+(though the use of transformation method would have to be swapped for the slower but more general Gibbs sampling) where as Newton Coats
+would requier much edditing. Furthermore the monte carlo method would likely keep the same error magnitudes with increasing dimensions where as
+Newton Coats would increase, however in these cases Newton Coats are clearly better.
+
+
+solve_veg()
+Running...
+Iteration: 24     Error 4.823e-05
+Integral is: 0.497675053532 +- 5.00766280725e-05 (epsilon = 0.050077)
+Agrees with Simpsons Rule Result (0.01405 epsilon)
+Run time 6.5149s
+Difference from Newton Coats anwer 1.405e-05 ( 0.01405 epsilon)
+
+solve_veg(e = 1e-4)
+Running...
+Iteration: 25     Error 5.008e-05
+Integral is: 0.497673336996 +- 4.87874464855e-05 (epsilon = 0.487874)
+Agrees with Simpsons Rule Result (0.1234 epsilon)
+Run time 6.9095s
+Difference from Newton Coats anwer 1.234e-05 ( 0.1234 epsilon)
+
+solve_veg(e = 1e-5)
+Running...
+Iteration: 802     Error 9.874e-06
+Integral is: 0.497670369683 +- 9.86718393165e-06 (epsilon = 0.986718)
+Agrees with Simpsons Rule Result (0.937 epsilon)
+Run time 226.0332s
+Difference from Newton Coats anwer 9.37e-06 ( 0.937 epsilon)
+
+
+
+
+
+
+Conclusion
+
+All the methods implemented have managed to solve the integration problem
+\ref{prob} with the wave function \ref{wave} to at least a relative accuracy of $10^{-4}$. These results
+all agree the integral is $0.4976 \pm 0.001$, with some methods giving an even higher accuracy. The physical
+interpretation of this result is that the probability of finding the sample localised particle in the range [0,2]
+is approximatly half. This makes sense with regard to the equation solved, as it is a gaussain (with complex phase)
+with a standard deviation less than the range for which we are only considering the positive half. Although it has
+magnitude up to infinity, the integral is vanishing, so the particle is most likely to be found in the range [-2,2],
+with a probability of $0.9952 \pm 0.002$.
+
+For this one dimensional exaple Newton Coats methods were more efficent, requiereing order between $10^{2}
+10^4$ iterations to obtain a relative accuracy of $10^{-6}$, compared to Monte Carlo methods which requiered order
+$\geqslant10^5$. Specifcally Simpsons Rule was optimal, giving an uncertainty of $\pm1.6×10-7$ in only 64 samples of
+the integrand. Monte Carlo method via transformation sampling struggled to terminated correctly and give requiered
+uncertainties partly due to the random nature of their itertions but likely also because of the exact implementation
+methods. Furthermore adaptive importance sampling from the Vegas algorithm, though stable for the function in question, was shown to be unstable for other integrands, hence can not be
+trusted on its own. If such methods are to be viable for future use (likely for multidimensional functions) these issues would have to be addressed. From this it can be concluded that Newton Coats methods are more reliable and therefore suitable for one dimensional integrals.
+
+As Simpsons Rule was more efficent than the Trapezium Rule for the examples given here it seems logical that
+an expansion to _________ is a suitable extension of this experment and should be considered for future investigaions (as should testing both types of integration for multidimensional integrals).
+
+Abstract
+
+Vairious Newton Coats and Monte Carlo importnace sampling integration algorithms have been implemented to solve a non-analytical integral
+for the probability of detecting a quantum particle in a one dimensional regon of space for a fixed time. All methods
+agreed the probability in the range [0,2] with wave function (\ref{}) is _________. Simpsons method is the most efficent method in this instance, finding the integrand as ______ in ___ iterations. Monte Carlo methods, including
+adaptive monte carlo (Vegas algorithm) proved less efficent requiereing far more iterations, with the later method being unstable for multiple example integrals. Hence it can be concluded that in one dimenion Newton Coats methods are more suitable.

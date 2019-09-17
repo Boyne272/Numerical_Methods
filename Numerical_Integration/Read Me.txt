@@ -1,0 +1,36 @@
+Code is stored entirely in funcions from the following moduals:
+
+import functions as fun
+import Vegas_final as vg
+import simpsons_trapezium_final as st
+import transformation_final as tr
+
+All funcitons written are documented as to how they function, what they requier and what they return.
+
+importing these and then running the following commands repoduces all data in report:
+(can just copy and past in but will take a few mins and produce many graphs)
+
+st.solve_ts() # solve simpsons trapezium for wavefunction (produces 2 plots)
+
+st.val_ts(plot = False) # validate simpsons trapezium for three functions
+# plot = True to reproduce 6 plots
+
+# solve monte carlo importance sampling for uniform pdf to rel accuracy 1e-6 (produces 2 plots)
+tr.solve_tran(pdf = fun.uni_pdf, trans=fun.trans_uni, e = 1e-6)
+
+# solve monte carlo importance sampling for linear pdf to rel accuracy 1e-6 (produces 2 plots)
+tr.solve_tran(e=1e-6)
+
+# validate monte carlo importance sampling via tranfomration method
+tr.val_tran(plot = False)
+# plot = True to reproduce 6 plots
+
+tr.plot_times() # plot the iterations taken with relative accuracy
+
+# solve Vegas for relative accuracy of 1e-4 (produces 2 plots)
+vg.solve_veg(e = 1e-4)
+
+# validate Vegas on lower than previous relative accuracies for reasonable run times
+vg.val_veg(plot = False)
+# plot = True to reproduce 6 plots
+
