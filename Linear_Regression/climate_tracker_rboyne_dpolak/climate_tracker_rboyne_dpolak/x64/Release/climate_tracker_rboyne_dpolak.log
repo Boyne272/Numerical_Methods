@@ -1,0 +1,17 @@
+﻿  climate_tracker_rboyne_dpolak.cpp
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\matrix.h(118): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\matrix.h(117): warning C4101: 'store': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(197): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(198): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(219): warning C4101: 'repeat': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(312): warning C4101: 'pred_month': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(313): warning C4101: 'end_year': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(313): warning C4101: 'pred_year': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(313): warning C4101: 'start_year': unreferenced local variable
+c:\users\deirdree\documents\acse_stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak\climate_tracker_rboyne_dpolak.cpp(312): warning C4101: 'user_choice': unreferenced local variable
+  Generating code
+  1 of 516 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  climate_tracker_rboyne_dpolak.vcxproj -> C:\Users\Deirdree\Documents\ACSE_Stuff\acse-5-advanced-programming-coursework-1-tokyo\climate_tracker_rboyne_dpolak\x64\Release\climate_tracker_rboyne_dpolak.exe

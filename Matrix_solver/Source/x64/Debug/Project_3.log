@@ -1,0 +1,19 @@
+﻿  main.cpp
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(21): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(33): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(46): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(91): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\generate_matrix.cpp(106): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(8): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\richard\onedrive - imperial college london\_acse-5\project_3\project_3\main.cpp(454): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Project_3.vcxproj -> C:\Users\Richard\OneDrive - Imperial College London\_ACSE-5\Project_3\x64\Debug\Project_3.exe

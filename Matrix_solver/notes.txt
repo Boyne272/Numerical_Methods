@@ -1,0 +1,70 @@
+optimised by:
+	- ascending the i function by 1 layer to allow cpu to optimise more for dense matrices (~50% reduction in runtime)
+	- Removing the i function from any use in a loop for sparse matrrices
+
+to do:
+	- readme
+	- code clean up
+		- move almost everything to protected
+		- multiple files
+		- comments galor
+	- make report
+	
+	
+	
+	
+Report Outline
+
+	- Overveiw
+		- Chosen method of solving
+		- gauss-seidel
+		- simple so that optimisations of CSR could be investigated
+		- random matrix generation
+	
+	- Code Features
+		- General aims in code design
+		- inheritence
+		- Templated
+
+	- Using the code 
+		- (not user interface, refer to readme for that)
+		- no reaching under the hood, met go through the set functions
+		- not fully robust (e.g. two set methods can be confused)
+		- (refer to readme for more details)
+		
+	- Optimisation & time results
+		- ensuring contiguous
+		- reducing the function layers
+		- pre_opt results
+			- used of averaged run times over different matrices
+		- adding optimisation flags
+		- post_opt results
+	
+	- Strengths and weaknesses
+		- no convergence criteria implemented
+		- clearly quite fast (LAPACK comparison?)
+		- does the job and does it well (refer to std after 100 iterations)
+		- restricted to positive definite matrices (i.e. the easy ones)
+		- relatively simple method
+		- no use of basic BLAS/LAPAC calls
+		- only requiered matrix methods included
+		- ot rigariously tested matrix setup restricted from users end but still not full-proof
+			(especially for sparse matrix)
+		
+	- Further improvements
+		- test of non-double matrix types
+		- add an implicit(?) scheme
+		- expand the range of operations avaiable for these matrices
+		- (though it truth I should just give up else I will create a weak BLAS pack)
+		
+		
+		
+Readme
+	- Notes about the file structure
+	- How to use for own matrices
+	- How the generate matrix method works (sudo code???)
+	- User interface for main.cpp (basically a bunch of examples)
+	
+	- something about britney spears
+		
+		
